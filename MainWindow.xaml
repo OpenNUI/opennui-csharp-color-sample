@@ -1,0 +1,30 @@
+﻿<Window x:Class="OpenNUI.Samples.ColorBasics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:OpenNUI.Samples.ColorBasics" 
+        Title="OpenNUI Color Basic" 
+        Height="600" Width="700">
+    <Window.Resources>
+        <SolidColorBrush x:Key="GrayBrush" Color="#2d2d30"/>
+        <SolidColorBrush x:Key="LightGrayBrush" Color="#333337"/>
+        <SolidColorBrush x:Key="WhiteGrayBrush" Color="#686868"/>
+        <SolidColorBrush x:Key="OpenNUILiteBlueBrush" Color="#2469d2"/>
+        <SolidColorBrush x:Key="OpenNUIBlueBrush" Color="#194b98"/>
+    </Window.Resources>
+    <Grid Background="{StaticResource GrayBrush}">
+        <Grid Margin="0,90,0,60" Background="{StaticResource LightGrayBrush}">
+            <Image x:Name="colorImage"/>
+        </Grid>
+        <Image Source="Images/Logo.png" Margin="5,5,0,0" VerticalAlignment="Top"  HorizontalAlignment="Left" Width="160" Height="60"/>
+        <Image Source="Images/Status.png" Margin="296,0" VerticalAlignment="Top"  Height="85"/>
+        <TextBlock Margin="0,58,10,0" Foreground="{StaticResource WhiteGrayBrush}" TextWrapping="Wrap" TextAlignment="Right" FontSize="20"  HorizontalAlignment="Right" VerticalAlignment="Top" ><Run Text="Color"/><Run Text=" "/><Run Text="B"/><Run Text="asics"/></TextBlock>
+
+        <TextBlock Text="Sensor: " Foreground="White" TextWrapping="Wrap" Margin="10,0,0,9"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="16"/>
+        <TextBlock x:Name="sensorNameTB" Text="" Foreground="White" TextWrapping="Wrap" Margin="53,0,0,9"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="16"/>
+        <TextBlock Text="Vendor: " Foreground="White" TextWrapping="Wrap" Margin="150,0,0,9"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="16"/>
+        <TextBlock x:Name="sensorVendorTB" Text="" Foreground="White" TextWrapping="Wrap" Margin="196,0,0,9"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="16"/>
+
+        <local:ClickableTextBlock Foreground="{StaticResource OpenNUILiteBlueBrush}" HoverBrush="{StaticResource OpenNUIBlueBrush}" HorizontalAlignment="Right" Margin="0,0,10,10" TextWrapping="Wrap" Text="Screenshot" FontSize="24" VerticalAlignment="Bottom" MouseDown="Screenshot_MouseDown"/>
+
+    </Grid>
+</Window>
