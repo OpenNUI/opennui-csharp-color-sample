@@ -39,8 +39,9 @@
     <ApplicationIcon>OpenNUI.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OpenNUI.CSharp.Library">
-      <HintPath>C:\OpenNUI\OpenNUI.CSharp.Library.dll</HintPath>
+    <Reference Include="OpenNUI.CSharp.Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\OpenNUI\OpenNUI.CSharp.Library.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

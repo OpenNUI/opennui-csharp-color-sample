@@ -87,7 +87,6 @@ namespace OpenNUI.Samples.ColorBasics
                 if (colorFrame == null)
                     return;
 
-                #region rgba32 to bgra32
                 int numPixels = colorFrame.FrameData.Length / sizeof(uint);
 
                 bitmap.Lock();
@@ -103,15 +102,14 @@ namespace OpenNUI.Samples.ColorBasics
                             uint x = *(pCurrent++);
                             *(pBitmapData + n) =
                                 (x & 0xFF000000) |
-                                (x & 0x00FF0000) >> 16 |
+                                (x & 0x00FF0000) |
                                 (x & 0x0000FF00) |
-                                (x & 0x000000FF) << 16;
+                                (x & 0x000000FF);
                         }
                     }
                 }
                 bitmap.AddDirtyRect(new Int32Rect(0, 0, colorFrame.Description.Width, colorFrame.Description.Height));
                 bitmap.Unlock();
-                #endregion
 
             });
 
